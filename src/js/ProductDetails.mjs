@@ -47,7 +47,7 @@ export default class ProductDetails {
         img.classList.add("divider");
         img.alt = this.product.NameWithoutBrand;
 
-        price.textContent = `$${this.product.FinalPrice}`;
+        price.innerHTML = `$${this.product.FinalPrice} ${this.product.FinalPrice < this.product.SuggestedRetailPrice ? "<span class=\"discounted\">Discounted</span>" : ""}`;
         price.classList.add("product-card__price");
 
         color.textContent = this.product.Colors.map((itm) => itm.ColorName).join(", ");

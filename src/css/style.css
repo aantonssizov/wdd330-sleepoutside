@@ -241,6 +241,10 @@ button {
   grid-column: 3;
 }
 
+.discounted {
+  color: #525b0f;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
