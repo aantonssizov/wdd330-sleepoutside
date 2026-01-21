@@ -42,3 +42,33 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
 
   parentElement.insertAdjacentHTML(position, renderedItems);
 }
+
+// render with a template
+export function renderWithTemplate(template, parentElement, data = null, callback = null) {
+  const fragment = document.createRange().createContextualFragment(template);
+  parentElement.replaceChildren(fragment);
+
+  if (callback) callback(data);
+}
+
+// load template from a given path
+async function loadTemplate(path) {
+  const response = await fetch(path);
+
+  if (response.ok)
+    return await response.text();
+  else
+    throw new Error(`Failed to fetch the template from the path: ${path}`);
+}
+
+// load templates for header and footer and render them
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("../partials/header.html");
+  const footerTemplate = await loadTemplate("../partials/footer.html");
+
+  const header = document.querySelector("#main-header");
+  const footer = document.querySelector("#main-footer");
+
+  renderWithTemplate(headerTemplate, header);
+  renderWithTemplate(footerTemplate, footer);
+}
