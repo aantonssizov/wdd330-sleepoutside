@@ -116,6 +116,27 @@ button {
 
 /* End utility classes */
 
+/* Categories styles */
+
+section.categories ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+
+  a.category-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: bold;
+  }
+}
+
+/* End categories styles */
+
 /* Cart icon styles */
 .cart {
   padding-top: 1em;
@@ -175,6 +196,15 @@ button {
   padding: 0.5em;
   border: 1px solid var(--light-grey);
   max-width: 250px;
+}
+
+.product-card a {
+  display: block;
+}
+
+.product-card a img {
+  display: block;
+  justify-self: center;
 }
 
 .product-card h2,
