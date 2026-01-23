@@ -72,3 +72,10 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, header);
   renderWithTemplate(footerTemplate, footer);
 }
+
+// load local JSON file
+export async function loadLocalJSON(filename) {
+  const response = await fetch(`../json/${filename}`);
+  const data = await response.json();
+  return data;
+}

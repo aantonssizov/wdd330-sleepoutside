@@ -43,7 +43,7 @@ export default class ProductDetails {
         name.textContent = this.product.NameWithoutBrand;
         name.classList.add("divider");
 
-        img.src = this.product.Image;
+        img.src = this.product.Images.PrimaryLarge;
         img.classList.add("divider");
         img.alt = this.product.NameWithoutBrand;
 
