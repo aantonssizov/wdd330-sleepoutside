@@ -20,6 +20,7 @@ export default class ProductDetails {
 
     addProductToCart() {
         let cartItems = getLocalStorage("so-cart") ?? [];
+        if (cartItems.find((itm) => itm.Id === this.product.Id)) return;
         cartItems.push(this.product);
         setLocalStorage("so-cart", cartItems);
     }

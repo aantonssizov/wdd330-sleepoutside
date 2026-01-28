@@ -90,7 +90,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -269,6 +269,12 @@ section.categories ul {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
+}
+
+.cart-footer {
+  &.hide {
+    display: none;
+  }
 }
 
 .discounted {
