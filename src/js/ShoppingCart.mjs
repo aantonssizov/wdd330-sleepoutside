@@ -32,7 +32,7 @@ export default class ShoppingCart {
       button.addEventListener("click", () => {
         this.cartItems = this.cartItems.filter(cartItem => cartItem.Id !== button.getAttribute("data-id"));
         setLocalStorage("so-cart", this.cartItems);
-        this.renderList();
+        location.reload();
       })
     })
   }

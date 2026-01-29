@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import { loadHeaderFooter, getParam, loadLocalJSON } from "./utils.mjs";
 
@@ -15,7 +15,7 @@ setProductsTitle();
 
 const category = getParam("category");
 const productsSection = document.querySelector("ul.product-list");
-const dataSource = new ProductData(category);
+const dataSource = new ExternalServices(category);
 const products = new ProductList(category, dataSource, productsSection);
 
 products.init();
