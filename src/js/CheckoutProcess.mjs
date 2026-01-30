@@ -68,6 +68,10 @@ export default class CheckoutProcess {
         payload["shipping"] = this.shipping;
         payload["tax"] = this.tax;
 
-        await this.externalServices.checkout(payload);
+        try {
+            await this.externalServices.checkout(payload);
+        } catch (err) {
+            console.log(err);
+        }
     }
 }
