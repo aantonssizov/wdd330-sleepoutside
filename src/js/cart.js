@@ -10,7 +10,7 @@ function setCartFooter() {
 
   cartFooter.classList.remove("hide");
   const total = cartItems
-    .reduce((prev, curr) => prev + curr.FinalPrice, 0)
+    .reduce((prev, curr) => prev + curr.FinalPrice * curr.quantity, 0)
     .toFixed(2);
   cartTotal.textContent = `Total: ${total}$`;
 }

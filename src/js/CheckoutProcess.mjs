@@ -6,7 +6,7 @@ function packageItems(items) {
         id: item.Id,
         name: item.Name,
         price: item.FinalPrice,
-        quantity: 1
+        quantity: item.quantity
     }))
 
     return result;
@@ -39,7 +39,7 @@ export default class CheckoutProcess {
         if (!this.cartItems.length) return;
 
         this.subtotal = this.cartItems
-            .reduce((prev, curr) => prev + curr.FinalPrice, 0).toFixed(2);
+            .reduce((prev, curr) => prev + curr.FinalPrice * curr.quantity, 0).toFixed(2);
 
         orderSubtotal.textContent = `Subtotal: $${this.subtotal}`;
     }
