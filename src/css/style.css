@@ -90,7 +90,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -324,6 +324,23 @@ form.checkout-form {
 
   input {
     padding: 5px;
+  }
+}
+
+.alert-box {
+  background-color: var(--primary-color);
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--dark-grey);
+  margin-bottom: 8px;
+  align-items: center;
+
+  .alert-close {
+    background: none;
+    font-size: var(--font-base);
+    margin: initial;
+    color: var(--dark-grey);
   }
 }
 

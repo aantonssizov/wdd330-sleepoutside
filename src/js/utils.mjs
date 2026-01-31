@@ -79,3 +79,28 @@ export async function loadLocalJSON(filename) {
   const data = await response.json();
   return data;
 }
+
+// create an alert message and display it, if scroll enabled, scroll page up, so that user can see the alert.
+export function alertMessage(message, scroll = true) {
+  const mainElm = document.querySelector("main");
+  const alertBox = document.createElement("div");
+  const messageElm = document.createElement("span");
+  const closeBtn = document.createElement("button");
+
+  alertBox.classList.add("alert-box");
+  messageElm.classList.add("alert-message");
+  closeBtn.classList.add("alert-close");
+
+  messageElm.textContent = message;
+  closeBtn.textContent = "X";
+
+  closeBtn.addEventListener("click", () => {
+    mainElm.removeChild(alertBox);
+  });
+
+  alertBox.append(messageElm, closeBtn);
+  mainElm.prepend(alertBox);
+
+  if (scroll)
+    window.scroll({ top: 0 });
+}

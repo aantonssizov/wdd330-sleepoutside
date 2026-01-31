@@ -1,5 +1,5 @@
 import ExternalServices from "./ExternalServices.mjs";
-import { getLocalStorage } from "./utils.mjs";
+import { alertMessage, getLocalStorage } from "./utils.mjs";
 
 function packageItems(items) {
     const result = items.map((item) => ({
@@ -70,8 +70,9 @@ export default class CheckoutProcess {
 
         try {
             await this.externalServices.checkout(payload);
+            location.replace(`/checkout/success`);
         } catch (err) {
-            console.log(err);
+            Object.values(err.message).forEach(message => alertMessage(message));
         }
     }
 }
