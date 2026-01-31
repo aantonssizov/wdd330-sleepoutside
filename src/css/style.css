@@ -327,6 +327,23 @@ form.checkout-form {
   }
 }
 
+.alert-box {
+  background-color: var(--primary-color);
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--dark-grey);
+  margin-bottom: 8px;
+  align-items: center;
+
+  .alert-close {
+    background: none;
+    font-size: var(--font-base);
+    margin: initial;
+    color: var(--dark-grey);
+  }
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

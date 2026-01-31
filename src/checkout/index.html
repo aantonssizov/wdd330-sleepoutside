@@ -46,6 +46,8 @@
             type="number"
             id="creditCardNumber"
             name="cardNumber"
+            maxlength="16"
+            placeholder="16 digits"
             required
           />
           <label for="expirationDate">ExpirationDate:</label>
@@ -55,6 +57,7 @@
             name="expiration"
             pattern="\d{1,2}\/\d{2,2}"
             maxlength="5"
+            placeholder="mm/yy"
             required
           />
           <label for="securityCode">Security Code:</label>
@@ -64,6 +67,7 @@
             name="code"
             pattern="\d{3,3}"
             maxlength="3"
+            placeholder="3 digits"
             required
           />
           <button type="submit">Checkout</button>

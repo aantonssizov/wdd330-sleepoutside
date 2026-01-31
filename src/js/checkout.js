@@ -16,5 +16,9 @@ zipInput.addEventListener("input", () => {
 
 checkoutForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkoutProcess.checkout(checkoutForm);
+  if (checkoutForm.checkValidity()) {
+    checkoutProcess.checkout(checkoutForm);
+  } else {
+    checkoutForm.reportValidity();
+  }
 });
